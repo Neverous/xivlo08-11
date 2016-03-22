@@ -1,0 +1,19 @@
+LOAD:
+      read  0
+      add   =9
+      store 1
+
+SAVE:
+      load  1
+      sub   =9
+      jzero END
+      load  =0
+      store ^1
+      load  1
+      sub   =1
+      store 1
+      jump  SAVE
+
+END:
+      halt
+

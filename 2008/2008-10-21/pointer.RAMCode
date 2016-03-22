@@ -1,0 +1,25 @@
+LOAD:
+       load  =10
+       store 1
+
+READ:
+       read  0
+       jzero WRITE
+       store ^1
+       load  1
+       add   =1
+       store 1
+       jump  READ
+
+WRITE:
+       load  1
+       sub   =1
+       store 1
+       write ^1
+       load  1
+       sub   =10
+       jzero END
+       jump  WRITE
+END:
+       halt
+

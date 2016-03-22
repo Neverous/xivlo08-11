@@ -1,0 +1,43 @@
+LOAD:
+	load =1
+	store 2
+	read 0
+	store 3
+	store 1
+
+FOR:
+	load 2
+	sub 3
+	add =1
+	jzero END
+	load 2
+	add 3
+	div =2
+	store 4
+	mult 4
+	sub 1
+	jgtz CHANGEEND
+	jzero FOUNDED
+	jump CHANGESTART
+	halt
+
+CHANGESTART:
+	load 4
+	store 2
+	jump FOR
+	halt
+
+CHANGEEND:
+	load 4
+	store 3
+	jump FOR
+	halt
+
+FOUNDED:
+	write 4
+	halt
+
+END:
+	write 3
+	halt
+

@@ -1,0 +1,29 @@
+
+load =0
+store 1
+store 2
+store 3
+store 4
+
+read 1
+read 2
+FOR: load 1
+jzero RETURN
+div 2
+jgtz NEXT
+load 1
+mult =10
+store 1
+load 4
+add =1
+store 4
+jump FOR
+NEXT: mult 2
+store 3
+load 1
+sub 3
+store 1
+jump FOR
+RETURN: write 4
+halt
+

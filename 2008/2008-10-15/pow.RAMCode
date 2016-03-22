@@ -1,0 +1,31 @@
+LOAD:
+	load =1
+	store 3
+	read 1
+	read 2
+
+FOR:
+	load 2
+	jzero END
+	div =2
+	mult =2
+	sub 2
+	jzero INC
+	load 3
+	mult 1
+	store 3
+
+INC:
+	load 1
+	mult 1
+	store 1
+	load 2
+	div =2
+	store 2
+	jump FOR
+	halt
+
+END:
+	write 3
+	halt
+

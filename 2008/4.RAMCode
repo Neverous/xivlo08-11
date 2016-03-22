@@ -1,0 +1,13 @@
+read 1
+read 2
+read 3
+load 1
+sub =1
+div 3
+store 1
+load 2
+div 3
+sub 1
+write 0
+halt
+

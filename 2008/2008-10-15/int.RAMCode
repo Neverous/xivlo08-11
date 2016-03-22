@@ -1,0 +1,22 @@
+LOAD:
+	read 1
+	read 2
+
+DO:
+	load 1
+	sub =1
+	mult 1
+	div =2
+	store 1
+	load 2
+	add =1
+	mult 2
+	div =2
+	store 2
+
+END:
+	load 2
+	sub 1
+	write 0
+	halt
+

@@ -1,0 +1,68 @@
+LOAD:
+	load =1
+	store 2
+	store 4
+	read 1
+
+WORK:
+	load =1
+	store 3
+	load 1
+	sub  =1
+	jzero END
+	load 2
+	add  =1
+	store 2
+	mult 2
+	sub  1
+	jgtz END
+	load 1
+	div  2
+	mult 2
+	mult =-1
+	add  1
+	jzero FOR
+	jump WORK
+	halt
+
+FOR:
+	load 1
+	div  2
+	mult 2
+	mult =-1
+	add  1
+	jzero GOOD
+	jump WORKEND
+	halt
+
+GOOD:
+	load 1
+	div  2
+	store 1
+	load 3
+	add  =1
+	store 3
+	jump FOR
+	halt
+
+WORKEND:
+	load 4
+	mult 3
+	store 4
+	jump WORK
+	halt
+
+END:
+	load 1
+	sub  =1
+	jzero WRITE
+	load 4
+	mult  =2
+	store 4
+	jump WRITE
+	halt
+
+WRITE:
+	write 4
+	halt
+

@@ -1,0 +1,30 @@
+read 1
+read 2
+read 3
+load 1
+sub =1
+div 3
+store 4
+load 2
+div 3
+sub 4
+store 2
+load 1
+add 3
+sub =1
+div 3
+mult 3
+store 1
+load 2
+jzero END
+WGO: write 1
+load 2
+sub =1
+store 2
+jzero END
+load 1
+add 3
+store 1
+jump WGO
+END: halt
+

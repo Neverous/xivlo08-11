@@ -1,0 +1,91 @@
+LOAD:
+	load =0
+	store 3
+	store 4
+	store 5
+	store 6
+	read 1
+	read 2
+
+GO:
+	load 2
+	div =2
+	sub 1
+	jgtz CHANGE
+	jump FOR
+	halt
+
+CHANGE:
+	load 2
+	div =2
+	store 1
+
+FOR:
+	load 2
+	sub 1
+	add =1
+	jzero END
+	load =1
+	store 6
+	load 2
+	store 5
+
+COLLATZ:
+	load 5
+	sub =1
+	jzero FINDED
+	load 5
+	div =2
+	mult =2
+	sub 5
+	jzero FIRST
+	jump SECOND
+	halt
+
+FIRST:
+	load 5
+	div =2
+	store 5
+	load 6
+	add =1
+	store 6
+	jump COLLATZ
+	halt
+
+SECOND:
+	load 5
+	mult =3
+	add =1
+	div =2
+	store 5
+	load 6
+	add =2
+	store 6
+	jump COLLATZ
+	halt
+
+FINDED:
+	load 6
+	sub 4
+	jgtz MAKS
+	jump DECR
+	halt
+
+MAKS:
+	load 6
+	store 4
+	load 2
+	store 3
+	jump DECR
+	halt
+
+DECR:
+	load 2
+	sub =1
+	store 2
+	jump FOR
+
+END:
+	write 3
+	halt
+

@@ -1,0 +1,30 @@
+LOAD:
+	read 1
+	load 1
+	div =10
+	mult =-10
+	add 1
+	store 2
+
+WORK:
+	load 1
+	div =10
+	store 1
+	load 1
+	jzero GOOD
+	div =10
+	mult =-10
+	add 1
+	sub 2
+	jzero WORK
+	jump BAD
+	halt
+
+BAD:
+	write =0
+	halt
+
+GOOD:
+	write =1
+	halt
+
